@@ -1,4 +1,4 @@
-import Collapse from './Collapse';
+import Timeline from './Timeline';
 
-const collapse = new Collapse(document.querySelector('.collapse'));
-collapse.init();
+const timeline = new Timeline(document.querySelector('.timeline'));
+timeline.init();
