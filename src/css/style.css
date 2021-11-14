@@ -27,10 +27,31 @@
   font-size: 20px;
 }
 
+.timelineDate {
+  font-size: 12px;
+}
+
+.timelineGeo {
+  font-size: 14px;
+}
+
 .timelineInput {
   box-sizing: border-box;
   font-size: 20px;
   font-family: "Gill Sans", sans-serif;
   height: 30px;
   width: 400px;
+}
+
+.timelinePop {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+  width: 420px;
+  min-height: 500px;
+}
+
+.hide {
+  display: none;
 }
