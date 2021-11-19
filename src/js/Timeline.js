@@ -50,16 +50,18 @@ export default class Timeline {
     const { text } = this;
     const coordsArr = evt.target.querySelector('.timelinePopInput').value.split(' ');
     const [latitude, longitude] = coordsArr;
-    this.popup.classList.add('hide');
-    const geo = `[${latitude}, ${longitude}]`;
-    const newPost = document.createElement('div');
-    newPost.classList.add('timelinePost');
-    newPost.innerHTML = `
+    if (latitude.match(/\w*(-?\[?\d+(\.\d+)?\]?)/) && longitude.match(/\w*(-?\[?\d+(\.\d+)?\]?)/)) {
+      this.popup.classList.add('hide');
+      const geo = `[${latitude}, ${longitude}]`;
+      const newPost = document.createElement('div');
+      newPost.classList.add('timelinePost');
+      newPost.innerHTML = `
         <p class="timelineDate">${date}</p>
         <p class="timelineText">${text}</p>
         <p class="timelineGeo">${geo}</p>
       `;
-    this.block.appendChild(newPost);
-    this.text = '';
+      this.block.appendChild(newPost);
+      this.text = '';
+    }
   }
 }
